@@ -1,0 +1,51 @@
+
+    <html>
+    <head>
+      <script type="text/javascript" src="VIS/dist/vis.js"></script>
+      <link href="VIS/dist/vis.css" rel="stylesheet" type="text/css">
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    </head>
+    <body>
+
+    <div id="VIS_draw"></div>
+    <script type="text/javascript">
+      var nodes = [{'group': 'Event', 'id': 0, 'label': '强奸罪'}, {'group': 'Event', 'id': 1, 'label': '情节特别严重的'}, {'group': 'Event', 'id': 2, 'label': '投保人、受益人故意造成被保险人死亡、伤残或者疾病'}, {'group': 'Event', 'id': 3, 'label': '投保人、受益人故意造成被保险人死亡、伤残或者疾病，骗取保险金的'}, {'group': 'Event', 'id': 5, 'label': '参与有组织的国际贩毒活动的'}, {'group': 'Event', 'id': 6, 'label': '巨额财产来源不明罪'}, {'group': 'Event', 'id': 19, 'label': '情节较轻的'}, {'group': 'Event', 'id': 8, 'label': '国家机关、国有公司、企业、事业单位、人民团体'}, {'group': 'Event', 'id': 9, 'label': '五年以下有期徒刑或者拘役'}, {'group': 'Event', 'id': 10, 'label': '违反国家规定'}, {'group': 'Event', 'id': 15, 'label': '三年以下有期徒刑或者拘役'}, {'group': 'Event', 'id': 12, 'label': '非法出售、私赠文物藏品罪'}, {'group': 'Event', 'id': 13, 'label': '违反文物保护法规'}, {'group': 'Event', 'id': 14, 'label': '威胁、引诱证人违背事实改变证言或者作伪证的'}, {'group': 'Event', 'id': 16, 'label': '依法被指定、确定的枪支制造企业、销售企业'}, {'group': 'Event', 'id': 17, 'label': '五年以下有期徒刑'}, {'group': 'Event', 'id': 18, 'label': '放火罪、决水罪、爆炸罪、投放危险物质罪、以危险方法危害公共安全罪之二'}];
+      var edges = [{'from': 0, 'label': 'is-a', 'to': 1}, {'from': 2, 'label': 'is-a', 'to': 3}, {'from': 5, 'label': 'is-a', 'to': 5}, {'from': 6, 'label': 'is-a', 'to': 19}, {'from': 8, 'label': 'is-a', 'to': 9}, {'from': 10, 'label': 'is-a', 'to': 15}, {'from': 12, 'label': 'is-a', 'to': 13}, {'from': 14, 'label': 'is-a', 'to': 15}, {'from': 16, 'label': 'is-a', 'to': 17}, {'from': 18, 'label': 'is-a', 'to': 19}];
+
+      var container = document.getElementById("VIS_draw");
+
+      var data = {
+        nodes: nodes,
+        edges: edges
+      };
+
+      var options = {
+          nodes: {
+              shape: 'dot',
+              size: 25,
+              font: {
+                  size: 14
+              }
+          },
+          edges: {
+              font: {
+                  size: 14,
+                  align: 'left'
+              },
+              color: 'red',
+              arrows: {
+                  to: {enabled: true, scaleFactor: 0.5}
+              },
+              smooth: {enabled: true}
+          },
+          physics: {
+              enabled: true
+          }
+      };
+
+      var network = new vis.Network(container, data, options);
+
+    </script>
+    </body>
+    </html>
+    
