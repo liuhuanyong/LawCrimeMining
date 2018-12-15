@@ -66,4 +66,10 @@ lawlib_spider.py: 法律图书馆网站裁判文书采集，用于构建裁判�
     'cause': ['致人死亡的'], 
     'crime': '十年以上有期徒刑'
     }
-# to be continued...
+    
+# contact 
+如有自然语言处理、知识图谱、事理图谱、社会计算、语言资源建设等问题或合作，请联系我:  
+邮箱:lhy_in_blcu@126.com  
+csdn:https://blog.csdn.net/lhy2014  
+我的自然语言处理项目: https://liuhuanyong.github.io/  
+刘焕勇，中国科学院软件研究所  
